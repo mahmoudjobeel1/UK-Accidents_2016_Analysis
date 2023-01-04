@@ -1,0 +1,7 @@
+airflow_milestone3/logs
+*__pycache__
+airflow_milestone3/plugins
+airflow_milestone3/data/*
+!airflow_milestone3/data/UK_Accidents_2016.csv
+
+postgres_accidents_datasets/accidents_etl_postgres
