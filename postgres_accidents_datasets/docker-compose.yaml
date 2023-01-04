@@ -1,0 +1,26 @@
+services:
+  pgdatabase:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=accidents_etl
+    volumes:
+      - "./accidents_etl_postgres:/var/lib/postgresql/data:rw"
+    ports:
+      - "5432:5432"    
+    networks:
+      - airflow
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=root
+    ports:
+      - "8181:80"
+    networks:
+      - airflow
+networks:
+  airflow:
+    external:
+      name: airflow_milestone3_default
