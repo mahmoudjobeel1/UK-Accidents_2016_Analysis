@@ -44,25 +44,6 @@ def apply_label_encoded(df, lookup):
         df,lookup=label_encode_feature(df,lookup,label)
     
     return df,lookup
-    # label_encoded_values = {'accident_severity': {'Slight': 1, 'Serious': 2, 'Fatal': 3},
-    #                         'light_conditions': {'Daylight': 1, 'Darkness - lights lit': 2,
-    #                                              'Darkness - lights unlit': 3, 'Darkness - no lighting': 4,
-    #                                              'Darkness - lighting unknown': 0},
-    #                         'weather_conditions': {'Fine no high winds': 1, 'Fine + high winds': 2,
-    #                                                'Raining no high winds': 3, 'Raining + high winds': 4,
-    #                                                'Snowing no high winds': 5, 'Snowing + high winds': 6,
-    #                                                'Fog or mist': 7, 'Other': 0},
-    #                         'road_surface_conditions': {'Dry': 1, 'Wet or damp': 2, 'Flood over 3cm. deep': 3,
-    #                                                     'Frost or ice': 4, 'Snow': 5},
-    #                         'did_police_officer_attend_scene_of_accident': {'Yes': 1, "No": 0},
-    #                         'trunk_road_flag': {'Trunk (Roads managed by Highways England)': 1, 'Non-trunk': 0}}
-
-    # for primary_key in label_encoded_values.keys():
-    #     for key, value in label_encoded_values[primary_key].items():
-    #         lookup.loc[len(lookup)] = {"feature_value": primary_key + "::" + key, "code": value}
-
-
-    # return df.replace(label_encoded_values)
 
 
 def feature_extraction(df):
