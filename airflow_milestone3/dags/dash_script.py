@@ -69,16 +69,16 @@ def ScatterSum(df, columnName1, columnName2):
 def graph1(df,lookup):
     col1_name="junction_detail"
     col2_name="number_of_vehicles"
-    replace_dataframe_from_lookup(df,lookup,col1_name)
-    replace_dataframe_from_lookup(df,lookup,col2_name)
+    df=replace_dataframe_from_lookup(df,lookup,col1_name)
+    df=replace_dataframe_from_lookup(df,lookup,col2_name)
     return ScatterAverage(df,col1_name, col2_name)
 
 
 def graph2(df,lookup):
     col1_name="road_type"
     col2_name="number_of_casualties"
-    replace_dataframe_from_lookup(df,lookup,col1_name)
-    replace_dataframe_from_lookup(df,lookup,col2_name)
+    df=replace_dataframe_from_lookup(df,lookup,col1_name)
+    df=replace_dataframe_from_lookup(df,lookup,col2_name)
     return ScatterAverage(df,col1_name, col2_name)
    
 
@@ -87,8 +87,8 @@ def graph2(df,lookup):
 def graph3(df,lookup):
     col1_name="junction_control"
     col2_name="number_of_casualties"
-    replace_dataframe_from_lookup(df,lookup,col1_name)
-    replace_dataframe_from_lookup(df,lookup,col2_name)
+    df=replace_dataframe_from_lookup(df,lookup,col1_name)
+    df=replace_dataframe_from_lookup(df,lookup,col2_name)
     return ScatterAverage(df,col1_name, col2_name)
    
 
@@ -97,16 +97,16 @@ def graph3(df,lookup):
 def graph4(df,lookup):
     col1_name="speed_limit"
     col2_name="number_of_casualties"
-    replace_dataframe_from_lookup(df,lookup,col1_name)
-    replace_dataframe_from_lookup(df,lookup,col2_name)
+    df=replace_dataframe_from_lookup(df,lookup,col1_name)
+    df=replace_dataframe_from_lookup(df,lookup,col2_name)
     return ScatterAverage(df,col1_name, col2_name)
     
 
 def graph5(df,lookup):
     col1_name="number_of_vehicles"
     col2_name="number_of_casualties"
-    replace_dataframe_from_lookup(df,lookup,col1_name)
-    replace_dataframe_from_lookup(df,lookup,col2_name)
+    df=replace_dataframe_from_lookup(df,lookup,col1_name)
+    df=replace_dataframe_from_lookup(df,lookup,col2_name)
     return ScatterAverage(df,col1_name, col2_name)
    
 
@@ -115,16 +115,16 @@ def restore_values_lookup(lookup,col_name):
     if len(lookup2)==0:
         return "null"
     lookup2['feature_value']=lookup2['feature_value'].str.split('::',1).str[1]
-    lookup2.to_csv('/opt/airflow/data/test.csv', index=False)
     values_dict={}
     for index, row in lookup2.iterrows():
         values_dict[row['code']]=row['feature_value']
-    return {col_name:values_dict}
+    return [col_name,values_dict]
 
 def replace_dataframe_from_lookup(df,lookup,col_name):
     values_dict=restore_values_lookup(lookup,col_name)
     if values_dict=='null':
-        pass
-    df.replace(values_dict)
+        return df
+    df[values_dict[0]]=df[values_dict[0]].map(values_dict[1])
+    return df
     
 
