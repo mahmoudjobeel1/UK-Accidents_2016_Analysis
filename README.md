@@ -555,7 +555,7 @@ sns.pairplot(df)
 
 
     
-![png](Milestone%201%20template_files/Milestone%201%20template_21_1.png)
+![Alt Text](images/1.png)
     
 
 
