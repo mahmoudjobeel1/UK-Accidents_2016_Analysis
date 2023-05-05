@@ -582,7 +582,7 @@ plt.show()
 
 
     
-![png](Milestone%201%20template_files/Milestone%201%20template_23_1.png)
+![Alt Text](images/2.png)
     
 
 
@@ -647,7 +647,7 @@ CountPlot("day_of_week")
 
 
     
-![png](Milestone%201%20template_files/Milestone%201%20template_27_0.png)
+![Alt Text](images/3.png)
     
 
 
@@ -661,8 +661,7 @@ BoxPlot("speed_limit")
 
 
     
-![png](Milestone%201%20template_files/Milestone%201%20template_29_0.png)
-    
+![Alt Text](images/4.png)    
 
 
 What the number of vehicles in the accidents?
@@ -675,7 +674,7 @@ BoxPlot("number_of_vehicles")
 
 
     
-![png](Milestone%201%20template_files/Milestone%201%20template_31_0.png)
+![Alt Text](images/5.png)
     
 
 
@@ -689,7 +688,7 @@ CountPlot2("road_type", "urban_or_rural_area")
 
 
     
-![png](Milestone%201%20template_files/Milestone%201%20template_33_0.png)
+![Alt Text](images/6.png)
     
 
 
@@ -704,7 +703,7 @@ CountPlot2("light_conditions", "weather_conditions")
 
 
     
-![png](Milestone%201%20template_files/Milestone%201%20template_35_0.png)
+![Alt Text](images/7.png)
     
 
 
@@ -718,7 +717,7 @@ ScatterSum("number_of_vehicles","number_of_casualties")
 
 
     
-![png](Milestone%201%20template_files/Milestone%201%20template_37_0.png)
+![Alt Text](images/8.png)
     
 
 
@@ -732,7 +731,7 @@ ScatterSum("speed_limit","number_of_casualties")
 
 
     
-![png](Milestone%201%20template_files/Milestone%201%20template_39_0.png)
+![Alt Text](images/9.png)
     
 
 
@@ -746,8 +745,7 @@ ScatterSum("junction_control","number_of_casualties")
 
 
     
-![png](Milestone%201%20template_files/Milestone%201%20template_41_0.png)
-    
+![Alt Text](images/10.png)    
 
 
 How does the road type affect the average of number of casualties?
@@ -760,8 +758,7 @@ ScatterAverage("road_type", "number_of_casualties")
 
 
     
-![png](Milestone%201%20template_files/Milestone%201%20template_43_0.png)
-    
+![Alt Text](images/11.png)    
 
 
 How does the junction affect the number of vehicles in the accidents?
@@ -774,8 +771,7 @@ ScatterAverage("junction_detail", "number_of_vehicles")
 
 
     
-![png](Milestone%201%20template_files/Milestone%201%20template_45_0.png)
-    
+![Alt Text](images/12.png)    
 
 
 # 3 - Cleaning Data
@@ -1203,8 +1199,7 @@ visualize_cols_values_cnt(dataset, 'road_type')
 
 
     
-![png](Milestone%201%20template_files/Milestone%201%20template_56_1.png)
-    
+![Alt Text](images/13.png)    
 
 
 Let's look at the road type missing values and there relation to the road class
@@ -1217,8 +1212,7 @@ visualize_cols_values_cnt(dataset, 'first_road_class', percentage=True, title="W
 
 
     
-![png](Milestone%201%20template_files/Milestone%201%20template_58_0.png)
-    
+![Alt Text](images/14.png)    
 
 
 
@@ -1228,8 +1222,7 @@ visualize_cols_values_cnt(road_null_ds, 'first_road_class', percentage=True, tit
 
 
     
-![png](Milestone%201%20template_files/Milestone%201%20template_59_0.png)
-    
+![Alt Text](images/15.png)    
 
 
 We can see that the percentage of unclassified roads in the missing data is higher than in the total data. This suggests that there might be a correlation between the road class being unclassified and its type to be missing. 
@@ -1244,8 +1237,7 @@ visualize_cols_values_cnt(dataset, 'speed_limit')
 
 
     
-![png](Milestone%201%20template_files/Milestone%201%20template_62_0.png)
-    
+![Alt Text](images/16.png)    
 
 
 There might be a relation between the speed limit being missing and the road class.
@@ -1257,8 +1249,7 @@ visualize_cols_values_cnt(dataset[dataset.speed_limit.isna()], 'first_road_class
 
 
     
-![png](Milestone%201%20template_files/Milestone%201%20template_64_0.png)
-    
+![Alt Text](images/17.png)    
 
 
 There are only 37 missing values for speed limit and most of these roads are unclassified so it might the reason that the speed limit is missing.
@@ -1276,8 +1267,7 @@ visualize_cols_values_cnt(dataset, 'junction_detail', percentage=True, title="Wh
 
 
     
-![png](Milestone%201%20template_files/Milestone%201%20template_69_0.png)
-    
+![Alt Text](images/18.png)    
 
 
 The "Not a junction" value occurs around 42% of the dataset which is the same percentage as missing second road. This might be the reason for it to be missing.
@@ -1292,8 +1282,7 @@ visualize_cols_values_cnt( ds_null_2nd_road, 'junction_detail', percentage=True,
 
 
     
-![png](Milestone%201%20template_files/Milestone%201%20template_71_0.png)
-    
+![Alt Text](images/19.png)    
 
 
 From the above 2 charts we can see that almost 100% of the null values are coming from accidents happened not at a junction. This means that there's no second road at the first place. This is Missing At Random (MAR) type.   
@@ -1307,8 +1296,7 @@ visualize_cols_values_cnt(dataset, 'weather_conditions', percentage=True)
 
 
     
-![png](Milestone%201%20template_files/Milestone%201%20template_74_0.png)
-    
+![Alt Text](images/20.png)    
 
 
 Because this is weather data. It might be justified that the weather was not reported during some accidents. It can be treated under the category of "Data missing or out of range".
@@ -1350,7 +1338,7 @@ visualize_cols_values_cnt( ds_null_junction_cont, 'junction_detail', percentage=
 
 
     
-![png](Milestone%201%20template_files/Milestone%201%20template_80_0.png)
+![Alt Text](images/21.png)    
     
 
 
@@ -1365,7 +1353,7 @@ visualize_cols_values_cnt(dataset, 'trunk_road_flag', percentage=True)
 
 
     
-![png](Milestone%201%20template_files/Milestone%201%20template_83_0.png)
+![Alt Text](images/22.png)    
     
 
 
@@ -1399,7 +1387,7 @@ visualize_cols_values_cnt( dataset, 'special_conditions_at_site', percentage=Tru
 
 
     
-![png](Milestone%201%20template_files/Milestone%201%20template_89_0.png)
+![Alt Text](images/23.png)    
     
 
 
@@ -1413,7 +1401,7 @@ visualize_cols_values_cnt( dataset, 'carriageway_hazards', percentage=True)
 
 
     
-![png](Milestone%201%20template_files/Milestone%201%20template_91_0.png)
+![Alt Text](images/24.png)    
     
 
 
@@ -2199,7 +2187,7 @@ ds_clean[ds_clean.number_of_casualties == 58]
 
 
     
-![png](Milestone%201%20template_files/Milestone%201%20template_127_1.png)
+![Alt Text](images/25.png)    
     
 
 
@@ -2625,7 +2613,7 @@ plt.show()
 
 
     
-![png](Milestone%201%20template_files/Milestone%201%20template_167_1.png)
+![Alt Text](images/26.png)    
     
 
 
@@ -2756,7 +2744,7 @@ plt.show()
 
 
     
-![png](Milestone%201%20template_files/Milestone%201%20template_173_1.png)
+![Alt Text](images/27.png)    
     
 
 
