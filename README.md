@@ -1,6 +1,6 @@
 # UK-Accidents_2016_Analysis
  
-# Milestone 1 - EDA and Preprocessing data 
+# EDA and Preprocessing data 
 
 - Load dataset
 - Explore the dataset and ask atleast 5 questions to give you a better understanding of the data provided to you. 
